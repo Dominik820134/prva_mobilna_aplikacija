@@ -1,30 +1,29 @@
 import "package:flutter/material.dart";
-
-import "../models/band.dart";
+import "../modeli/band.dart";
 import "ekran_detalja.dart";
 
 class EkranPopisa extends StatefulWidget {
   const EkranPopisa({super.key});
 
   @override
-  State<EkranPopisa> createState() => _EkranPopisa();
+  State<EkranPopisa> createState() => _EkranPopisaState();
 }
 
-class _EkranPopisa extends State<EkranPopisa> {
+class _EkranPopisaState extends State<EkranPopisa> {
   final Set<String> joined = {};
 
-  Future<void> openDetails(band band) async {
+  Future<void> openDetails(Bend band) async {
     final result = await Navigator.push<bool>(
       context,
       MaterialPageRoute(
-        builder: (context) => EkranDetalja(
-          band: band,
+        builder: (context) => BandDetailScreen(
+          activity: band,
           isJoined: joined.contains(band.name),
         ),
       ),
     );
 
-    if (result != null) {
+    if (result == true) {
       setState(() {
         joined.add(band.name);
       });
@@ -34,7 +33,7 @@ class _EkranPopisa extends State<EkranPopisa> {
   @override
   Widget build(BuildContext context) {
     final List<Widget> tiles = [];
-    for (final band in activities) {
+    for (final band in bendovi) {
       tiles.add(
         ActivityTile(
           band: band,
@@ -47,14 +46,14 @@ class _EkranPopisa extends State<EkranPopisa> {
     }
 
     return Scaffold(
-      appBar: AppBar(title: const Text("Izvannastavne aktivnosti")),
+      appBar: AppBar(title: const Text("Glazbeni Bendovi")),
       body: ListView(padding: const EdgeInsets.all(8), children: tiles),
     );
   }
 }
 
 class ActivityTile extends StatelessWidget {
-  final band band;
+  final Bend band;
   final bool isJoined;
   final VoidCallback onOpen;
 
@@ -95,7 +94,7 @@ class ActivityTile extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Text(band.songs),
+                Text(band.numberOfSongs),
               ],
             ),
           ),

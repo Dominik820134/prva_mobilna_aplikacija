@@ -1,8 +1,8 @@
 import "package:flutter/material.dart";
-import "../models/band.dart";
+import "../modeli/band.dart";
 
 class BandDetailScreen extends StatelessWidget {
-  final Activity activity;
+  final Bend activity;
   final bool isJoined;
 
   const BandDetailScreen({
@@ -32,7 +32,12 @@ class BandDetailScreen extends StatelessWidget {
                 children: [
                   Icon(activity.icon, size: 48, color: Colors.teal),
                   const SizedBox(width: 12),
-                  Expanded(child: Text(activity.description)),
+                  Expanded(
+                    child: Text(
+                      "Broj pjesama u katalogu: ${activity.numberOfSongs}",
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -50,7 +55,7 @@ class BandDetailScreen extends StatelessWidget {
                       : () {
                           Navigator.pop(context, true);
                         },
-                  child: Text(isJoined ? "Prijavljen" : "Prijavi se"),
+                  child: Text(isJoined ? "Slijediš bend" : "Zaprati bend"),
                 ),
                 OutlinedButton(
                   onPressed: () {
