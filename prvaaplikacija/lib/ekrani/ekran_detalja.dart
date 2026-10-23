@@ -24,13 +24,13 @@ class BandDetailScreen extends StatelessWidget {
               padding: const EdgeInsets.all(12),
               margin: const EdgeInsets.only(bottom: 16),
               decoration: BoxDecoration(
-                color: Colors.teal.shade50,
+                color: Colors.deepPurple.shade50,
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.teal),
+                border: Border.all(color: Colors.deepPurple),
               ),
               child: Row(
                 children: [
-                  Icon(activity.icon, size: 48, color: Colors.teal),
+                  Icon(activity.icon, size: 48, color: Colors.deepPurple),
                   const SizedBox(width: 12),
                   Expanded(
                     child: Text(
@@ -55,7 +55,7 @@ class BandDetailScreen extends StatelessWidget {
                       : () {
                           Navigator.pop(context, true);
                         },
-                  child: Text(isJoined ? "Slijediš bend" : "Zaprati bend"),
+                  child: Text(isJoined ? "Pratiš bend" : "Zaprati bend"),
                 ),
                 OutlinedButton(
                   onPressed: () {

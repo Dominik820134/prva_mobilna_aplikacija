@@ -1,17 +1,29 @@
 # prvaaplikacija
 
-A new Flutter project.
+Jednostavna mobilna Flutter aplikacija za pregldet informacija o poznatim glazbenim bendovima.
 
-## Getting Started
+## Opis teme
+Aplikacija prikazuje popis odabranih glazbenih sastava(rock, metal, hip-hop), s informacijama o broju njihovih pjesama i kratkim opisom svakog benda.
+Korisnih može označiti bendove koje prati, a kod onih koje je već zapratio piše "Pratiš bend".
 
-This project is a starting point for a Flutter application.
+# Ekrani u aplikaciji
+Prvi ekran ("Ekran popisa"):
+    -prikazuje popis od 5 glazbnih bendova
+    -svaka stavka sadrži odgovarajuću ikonu, naziv benda i podatak o broju pjesama
+    -klikom na svaku stavku otvara se ekran s detaljima
 
-A few resources to get you started if this is your first Flutter project:
+Drugi ekran ("Ekran detalja"):
+    -prikazuje detaljnije informacije o odabranom bendu (prošireni opis i ikonu)
+    -omogućuje korisniku gumb "Zaprati bend" za praćenje
+    -sadrži "Natrag" za povratak na početni popis
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Struktura projekta
+lib/
+-main.dart
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+>ekrani/
+-ekran_popisa.dart
+-ekran_detalja.dart
+
+>modeli/
+-band.dart

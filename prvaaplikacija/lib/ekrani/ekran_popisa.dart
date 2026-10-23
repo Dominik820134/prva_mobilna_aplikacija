@@ -78,7 +78,7 @@ class ActivityTile extends StatelessWidget {
           Icon(
             band.icon,
             size: 32,
-            color: isJoined ? Colors.green : Colors.grey,
+            color: isJoined ? Colors.deepPurpleAccent : Colors.grey,
           ),
           const SizedBox(width: 12),
           Expanded(

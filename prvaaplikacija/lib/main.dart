@@ -14,7 +14,7 @@ class BandApp extends StatelessWidget {
       title: "Glazbeni Bendovi",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
         useMaterial3: true,
       ),
       home: const EkranPopisa(),
